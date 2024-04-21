@@ -14,14 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //afficher
-Route::get("/", [ProductController::class, "index"]);
-//Pour ajouter un produit
-Route::get("/ajouter", [ProductController::class,"create"]);
-Route::post("/ajouter/traitement", [ProductController::class,"store"]);
-//Pour modifier et mettte à jour
-Route::get("/update/{id}", [ProductController::class,"edit"]);
-Route::post("/update/traitement/{id}", [ProductController::class,"update"]);
-//Pour supprimer
-Route::delete("/delete/{id}", [ProductController::class,"destroy"]);
+Route::controller(productController::class)->group(function () {
+      //afficher
+      Route::get("/", "index");
+      //Pour ajouter un produit
+      Route::get("/ajouter", "create");
+      Route::post("/ajouter/traitement", "store");
+     //Pour modifier et mettte à jour
+      Route::get("/update/{id}", "edit");
+      Route::post("/update/traitement/{id}", "update");
+      //Pour supprimer
+      Route::get("/delete/{id}", "destroy");
 
+      
+    }
+);
 

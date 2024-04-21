@@ -35,7 +35,7 @@ class productController extends Controller
     {
         // D'abord faire la requête de validation des champs
 
-        $request->validate([
+        $validate_data = $request->validate([
             "nom" => "required",
             "prix" => "required",
             "description" => "required",
