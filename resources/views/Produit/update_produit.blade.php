@@ -53,7 +53,7 @@
 
              <br>
 
-             <a href="/"class= "btn btn-danger">Revenir à la liste</a>
+             <a href="{{url("/")}}"class= "btn btn-danger">Revenir à la liste</a>
 
              </form>
          </div>   

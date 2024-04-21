@@ -50,8 +50,8 @@
                     <td>{{$produit->description}}</td>
                     <td><img src="{{asset('storage/'.$produit->photo)}}" alt="Photo" width="100px;"height="100px;"></td>
                     <td>
-                      <a href="/update/{{$produit->id}}" class="btn btn-warning">Edit</a>
-                      <form action="/delete/{{$produit->id}}" method="POST">
+                      <a href="{{url("/update/{$produit->id}")}}" class="btn btn-warning">Edit</a>
+                      <form action="{{url("/delete/{$produit->id}")}}" method="POST">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Delete</button>

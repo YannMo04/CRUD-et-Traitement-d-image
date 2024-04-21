@@ -28,7 +28,7 @@
        
             <div class="col s12">
 
-              <form action="/ajouter/traitement" method="post" enctype="multipart/form-data">
+              <form action="{{url("/ajouter/traitement")}}" method="post" enctype="multipart/form-data">
                 @csrf
 
                <div class="form-group">
@@ -61,7 +61,7 @@
 
              <br>
 
-             <a href="/"class= "btn btn-danger">Revenir à la liste</a>
+             <a href="{{url('/')}}"class= "btn btn-danger">Revenir à la liste</a>
 
              </form>
          </div>   
